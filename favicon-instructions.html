@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعليمات إنشاء أيقونات الموقع</title>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #0077b6;
+            border-bottom: 2px solid #0077b6;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-top: 30px;
+        }
+        ol, ul {
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .note {
+            background-color: #f8f9fa;
+            border-left: 4px solid #0077b6;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0077b6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #005b8a;
+        }
+    </style>
+</head>
+<body>
+    <h1>تعليمات إنشاء أيقونات الموقع (Favicon)</h1>
+    
+    <div class="note">
+        <p>تم إعداد الموقع لاستخدام أيقونات مخصصة (favicon) تظهر في علامة تبويب المتصفح وعند تثبيت الموقع كتطبيق. لإنشاء هذه الأيقونات، اتبع التعليمات التالية.</p>
+    </div>
+    
+    <h2>الخطوات</h2>
+    
+    <ol>
+        <li>قم بزيارة موقع <a href="https://realfavicongenerator.net/" target="_blank">Real Favicon Generator</a> أو <a href="https://favicon.io/" target="_blank">Favicon.io</a>.</li>
+        
+        <li>قم بتحميل صورة الشعار الأصلية (يفضل أن تكون بحجم كبير وبصيغة PNG أو SVG).</li>
+        
+        <li>قم بتعديل الإعدادات حسب الحاجة:
+            <ul>
+                <li>اللون الأساسي: <code>#0077b6</code></li>
+                <li>اللون الثانوي: <code>#ffffff</code></li>
+                <li>تأكد من اختيار خيارات لجميع المتصفحات والأنظمة (iOS, Android, Windows)</li>
+            </ul>
+        </li>
+        
+        <li>قم بتنزيل حزمة الأيقونات المولدة.</li>
+        
+        <li>قم بنقل الملفات التالية إلى مجلد <code>favicon</code> في مشروع الموقع:
+            <ul>
+                <li><code>favicon.ico</code> (الأيقونة الرئيسية)</li>
+                <li><code>apple-touch-icon.png</code> (أيقونة أجهزة Apple)</li>
+                <li><code>favicon-32x32.png</code> (أيقونة 32×32 بكسل)</li>
+                <li><code>favicon-16x16.png</code> (أيقونة 16×16 بكسل)</li>
+                <li><code>safari-pinned-tab.svg</code> (أيقونة Safari)</li>
+                <li><code>android-chrome-192x192.png</code> (أيقونة Android)</li>
+                <li><code>android-chrome-512x512.png</code> (أيقونة Android)</li>
+                <li><code>mstile-150x150.png</code> (أيقونة Windows)</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <div class="note">
+        <p><strong>ملاحظة:</strong> تم بالفعل إضافة روابط الأيقونات إلى صفحات الموقع، لذا بمجرد إضافة الملفات المذكورة أعلاه، ستظهر أيقونة الموقع في علامة تبويب المتصفح بدلاً من الأيقونة الافتراضية.</p>
+    </div>
+    
+    <h2>نصائح إضافية</h2>
+    
+    <ul>
+        <li>استخدم صورة عالية الجودة وواضحة للشعار.</li>
+        <li>تأكد من أن الشعار يظهر بشكل جيد في الأحجام الصغيرة.</li>
+        <li>استخدم نفس الألوان المستخدمة في الموقع للحفاظ على التناسق.</li>
+        <li>اختبر الأيقونات في متصفحات مختلفة للتأكد من ظهورها بشكل صحيح.</li>
+    </ul>
+    
+    <a href="index.html" class="btn">العودة إلى الموقع</a>
+</body>
+</html>

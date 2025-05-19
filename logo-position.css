@@ -1,0 +1,59 @@
+/* تعديل موضع الشعار في القائمة الرئيسية */
+
+/* إعادة تنظيم هيكل القائمة الرئيسية */
+header .container {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* تنسيق الشعار */
+.logo {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-image {
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+
+.logo-text {
+    text-align: center;
+}
+
+/* تنسيق القائمة */
+nav {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul {
+    justify-content: center;
+    width: 100%;
+}
+
+/* تعديلات للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .logo {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .logo-image {
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+    
+    .logo-text {
+        text-align: center;
+    }
+    
+    nav {
+        width: 100%;
+    }
+}

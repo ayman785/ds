@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تمارين آمنة وفعالة لمرضى السكري - د. إبراهيم مقبل الضبيبي للعلاج الطبيعي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fix-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page specific styles */
+        .article-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/blog7.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .article-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .article-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .article-meta i {
+            margin-left: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .article-section {
+            padding: 5rem 0;
+        }
+        
+        .article-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .article-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+        }
+        
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        
+        .article-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .article-content img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+        
+        .article-content blockquote {
+            border-right: 4px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background-color: var(--light-color);
+            font-style: italic;
+        }
+        
+        .article-share {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .article-share span {
+            margin-left: 1rem;
+            font-weight: 500;
+        }
+        
+        .article-share a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .article-share a:hover {
+            transform: translateY(-3px);
+            background-color: var(--dark-color);
+        }
+        
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .article-tags a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--light-color);
+            border-radius: 30px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .article-tags a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        @media (max-width: 992px) {
+            .article-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="لقطة الشاشة 2025-05-15 064131.png" alt="د. إبراهيم مقبل الضبيبي">
+                </div>
+                <div class="logo-text">
+                    <h1>د. إبراهيم مقبل الضبيبي</h1>
+                    <p>أخصائي العلاج الطبيعي</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html"><i class="fas fa-user-md"></i> عن الدكتور</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html"><i class="fas fa-stethoscope"></i> خدماتنا</a>
+                        <ul class="dropdown">
+                            <li><a href="services.html#bone"><i class="fas fa-bone"></i> علاج إصابات العظام</a></li>
+                            <li><a href="services.html#rehab"><i class="fas fa-walking"></i> إعادة التأهيل الحركي</a></li>
+                            <li><a href="services.html#heart"><i class="fas fa-heartbeat"></i> العلاج الطبيعي للقلب</a></li>
+                            <li><a href="services.html#neuro"><i class="fas fa-brain"></i> العلاج العصبي</a></li>
+                            <li><a href="services.html#children"><i class="fas fa-child"></i> العلاج الطبيعي للأطفال</a></li>
+                            <li><a href="services.html#massage"><i class="fas fa-hands"></i> العلاج اليدوي</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html" class="active"><i class="fas fa-notes-medical"></i> نصائح طبية</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                    <li><a href="appointments.html" class="appointment-btn"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="article-hero">
+        <div class="container">
+            <h1>تمارين آمنة وفعالة لمرضى السكري</h1>
+            <div class="article-meta">
+                <span><i class="far fa-calendar-alt"></i> 12 مايو 2023</span>
+                <span><i class="far fa-user"></i> د. إبراهيم الضبيبي</span>
+                <span><i class="far fa-folder"></i> تمارين منزلية</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Section -->
+    <section class="article-section">
+        <div class="container">
+            <div class="article-container">
+                <div class="article-content">
+                    <p>يعتبر مرض السكري من الأمراض المزمنة التي تتطلب رعاية خاصة واهتماماً مستمراً. ومن المعروف أن ممارسة النشاط البدني بانتظام تلعب دوراً هاماً في السيطرة على مستويات السكر في الدم وتحسين الصحة العامة لمرضى السكري. في هذا المقال، نقدم مجموعة من التمارين الآمنة والفعالة التي يمكن لمرضى السكري ممارستها.</p>
+                    
+                    <h2>أهمية ممارسة التمارين الرياضية لمرضى السكري</h2>
+                    <p>تساعد ممارسة التمارين الرياضية بانتظام مرضى السكري بعدة طرق:</p>
+                    <ul>
+                        <li>تحسين حساسية الجسم للأنسولين، مما يساعد في خفض مستويات السكر في الدم</li>
+                        <li>المساعدة في التحكم بالوزن والحفاظ عليه ضمن المعدل الطبيعي</li>
+                        <li>تقليل خطر الإصابة بأمراض القلب والأوعية الدموية</li>
+                        <li>تحسين الدورة الدموية، خاصة في الأطراف</li>
+                        <li>تعزيز الصحة النفسية وتقليل التوتر والقلق</li>
+                        <li>تقوية العضلات والعظام</li>
+                    </ul>
+                    
+                    <blockquote>
+                        "النشاط البدني المنتظم هو أحد أهم العوامل في السيطرة على مرض السكري وتقليل مضاعفاته على المدى الطويل."
+                    </blockquote>
+                    
+                    <h2>احتياطات قبل ممارسة التمارين الرياضية</h2>
+                    <p>قبل البدء في أي برنامج تمارين، يجب على مرضى السكري مراعاة الاحتياطات التالية:</p>
+                    <ul>
+                        <li>استشارة الطبيب المعالج قبل البدء في أي برنامج رياضي جديد</li>
+                        <li>فحص مستوى السكر في الدم قبل وبعد التمرين</li>
+                        <li>تجنب ممارسة التمارين إذا كان مستوى السكر في الدم مرتفعاً جداً (أكثر من 250 ملغم/ديسيلتر) أو منخفضاً جداً (أقل من 100 ملغم/ديسيلتر)</li>
+                        <li>الاحتفاظ بمصدر سريع للسكر (مثل عصير الفاكهة أو أقراص الجلوكوز) في حالة انخفاض مستوى السكر أثناء التمرين</li>
+                        <li>شرب كمية كافية من الماء قبل وأثناء وبعد التمرين</li>
+                        <li>ارتداء أحذية مناسبة وفحص القدمين بانتظام</li>
+                    </ul>
+                    
+                    <h2>تمارين آمنة وفعالة لمرضى السكري</h2>
+                    
+                    <h3>1. المشي</h3>
+                    <p>المشي هو أحد أفضل التمارين لمرضى السكري، فهو سهل وآمن ولا يتطلب معدات خاصة:</p>
+                    <ul>
+                        <li>ابدأ بالمشي لمدة 10-15 دقيقة يومياً، ثم زد المدة تدريجياً حتى تصل إلى 30-45 دقيقة</li>
+                        <li>حاول المشي بوتيرة متوسطة بحيث تستطيع التحدث ولكن ليس الغناء</li>
+                        <li>يمكن تقسيم وقت المشي إلى فترات قصيرة متعددة خلال اليوم</li>
+                    </ul>
+                    
+                    <h3>2. السباحة</h3>
+                    <p>السباحة تمرين ممتاز لمرضى السكري، خاصة لمن يعانون من مشاكل في المفاصل:</p>
+                    <ul>
+                        <li>تساعد السباحة في تحريك جميع عضلات الجسم دون الضغط على المفاصل</li>
+                        <li>ابدأ بالسباحة لمدة 10 دقائق، ثم زد المدة تدريجياً</li>
+                        <li>يمكن أيضاً ممارسة تمارين المشي في الماء أو تمارين الأيروبيك المائية</li>
+                    </ul>
+                    
+                    <h3>3. ركوب الدراجة</h3>
+                    <p>ركوب الدراجة تمرين جيد للقلب والأوعية الدموية ولا يضغط على المفاصل:</p>
+                    <ul>
+                        <li>يمكن استخدام الدراجة الثابتة في المنزل أو صالة الألعاب الرياضية</li>
+                        <li>ابدأ بركوب الدراجة لمدة 10-15 دقيقة، ثم زد المدة تدريجياً</li>
+                        <li>حافظ على وتيرة معتدلة تسمح لك بالتحدث دون صعوبة</li>
+                    </ul>
+                    
+                    <h3>4. تمارين المقاومة</h3>
+                    <p>تمارين المقاومة تساعد في بناء العضلات وتحسين حساسية الأنسولين:</p>
+                    <ul>
+                        <li>استخدم أوزاناً خفيفة أو أشرطة المقاومة المطاطية</li>
+                        <li>ركز على المجموعات العضلية الكبيرة (الساقين، الظهر، الصدر، البطن)</li>
+                        <li>قم بـ 10-15 تكراراً لكل تمرين، ومجموعتين إلى ثلاث مجموعات</li>
+                        <li>مارس تمارين المقاومة 2-3 مرات في الأسبوع، مع يوم راحة بين كل جلسة</li>
+                    </ul>
+                    
+                    <h3>5. تمارين التوازن والمرونة</h3>
+                    <p>تمارين التوازن والمرونة مهمة لتحسين الحركة ومنع السقوط:</p>
+                    <ul>
+                        <li>اليوغا والتاي تشي من التمارين الممتازة لتحسين التوازن والمرونة</li>
+                        <li>تمارين الإطالة البسيطة للعضلات الرئيسية</li>
+                        <li>تمارين الوقوف على قدم واحدة لتحسين التوازن</li>
+                    </ul>
+                    
+                    <h2>نموذج لبرنامج تمارين أسبوعي لمرضى السكري</h2>
+                    <p>إليك نموذجاً لبرنامج تمارين أسبوعي متوازن يمكن لمرضى السكري اتباعه:</p>
+                    <ul>
+                        <li><strong>الأحد:</strong> المشي لمدة 30 دقيقة بوتيرة متوسطة</li>
+                        <li><strong>الاثنين:</strong> تمارين مقاومة للجزء العلوي من الجسم (20-30 دقيقة)</li>
+                        <li><strong>الثلاثاء:</strong> ركوب الدراجة أو السباحة لمدة 30 دقيقة</li>
+                        <li><strong>الأربعاء:</strong> راحة أو تمارين خفيفة للمرونة</li>
+                        <li><strong>الخميس:</strong> تمارين مقاومة للجزء السفلي من الجسم (20-30 دقيقة)</li>
+                        <li><strong>الجمعة:</strong> المشي لمدة 30 دقيقة أو السباحة</li>
+                        <li><strong>السبت:</strong> يوغا أو تمارين توازن ومرونة (20-30 دقيقة)</li>
+                    </ul>
+                    
+                    <h2>نصائح لممارسة التمارين بأمان</h2>
+                    <ul>
+                        <li>ابدأ ببطء وزد شدة ومدة التمارين تدريجياً</li>
+                        <li>قم بالإحماء قبل التمرين والتهدئة بعده</li>
+                        <li>راقب مستويات السكر في الدم قبل وأثناء وبعد التمرين</li>
+                        <li>احمل معك بطاقة تعريف توضح أنك مصاب بالسكري</li>
+                        <li>لا تمارس التمارين بمفردك إذا كنت معرضاً لانخفاض مستوى السكر في الدم</li>
+                        <li>توقف عن التمرين واطلب المساعدة الطبية إذا شعرت بدوار أو ضعف أو ألم في الصدر</li>
+                    </ul>
+                    
+                    <h2>الخلاصة</h2>
+                    <p>ممارسة التمارين الرياضية بانتظام جزء أساسي من علاج مرض السكري والسيطرة عليه. مع اتباع الاحتياطات اللازمة واختيار التمارين المناسبة، يمكن لمرضى السكري الاستفادة من الفوائد الصحية العديدة للنشاط البدني. تذكر دائماً استشارة طبيبك قبل البدء في أي برنامج تمارين جديد، والاستماع إلى جسمك ومراقبة مستويات السكر في الدم بانتظام.</p>
+                    
+                    <div class="article-tags">
+                        <a href="category-exercises.html">تمارين منزلية</a>
+                        <a href="category-rehab.html">إعادة التأهيل</a>
+                    </div>
+                    
+                    <div class="article-share">
+                        <span>مشاركة المقال:</span>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>أحدث المقالات</h3>
+                        <div class="recent-posts-list">
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="images/blog1.jpg" alt="تمارين لتخفيف آلام أسفل الظهر">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="article1.html">5 تمارين فعالة لتخفيف آلام أسفل الظهر</a></h4>
+                                    <span class="date">15 يونيو 2023</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="images/blog2.jpg" alt="العلاج الطبيعي بعد جراحة الركبة">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="article2.html">دليلك الشامل للعلاج الطبيعي بعد جراحة استبدال مفصل الركبة</a></h4>
+                                    <span class="date">28 مايو 2023</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="images/blog3.jpg" alt="تمارين للرقبة">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="article3.html">تمارين بسيطة لتخفيف آلام الرقبة الناتجة عن العمل المكتبي</a></h4>
+                                    <span class="date">10 مايو 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>التصنيفات</h3>
+                        <ul class="categories-list">
+                            <li><a href="category-back.html">آلام الظهر <span>8</span></a></li>
+                            <li><a href="category-neck.html">آلام الرقبة <span>5</span></a></li>
+                            <li><a href="category-rehab.html">إعادة التأهيل <span>12</span></a></li>
+                            <li><a href="category-sports.html">إصابات الرياضة <span>7</span></a></li>
+                            <li><a href="category-children.html">العلاج الطبيعي للأطفال <span>4</span></a></li>
+                            <li><a href="category-exercises.html" class="active">تمارين منزلية <span>10</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>عيادة د. إبراهيم مقبل الضبيبي</h3>
+                    <p>نقدم خدمات علاج طبيعي متميزة بأحدث التقنيات وأفضل الممارسات العلاجية لمساعدتك على استعادة صحتك والتخلص من الألم.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن الدكتور</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="blog.html">نصائح طبية</a></li>
+                        <li><a href="gallery.html">معرض الصور</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h3>ساعات العمل</h3>
+                    <ul>
+                        <li>السبت - الخميس: 9:00 صباحاً - 8:00 مساءً</li>
+                        <li>الجمعة: مغلق</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 عيادة د. إبراهيم مقبل الضبيبي للعلاج الطبيعي. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

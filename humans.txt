@@ -1,0 +1,13 @@
+/* TEAM */
+	Owner: د. إبراهيم مقبل الضبيبي
+	Contact: alamil.center.vip@gmail.com
+	Location: عمران، اليمن
+
+/* SITE */
+	Last update: 2023/12/01
+	Language: Arabic
+	Doctype: HTML5
+	IDE: Visual Studio Code
+	Standards: HTML5, CSS3, JavaScript
+	Components: Font Awesome, Google Fonts
+	Software: Progressive Web App (PWA)

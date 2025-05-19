@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نصائح طبية - مركز الأمل للعلاج الطبيعي وإعادة التأهيل</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fix-styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page specific styles */
+        body {
+            background: linear-gradient(45deg, rgba(0, 119, 182, 0.03), rgba(0, 180, 216, 0.03));
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/bg-pattern.svg');
+            background-size: 100px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .blog-parallax-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .blog-parallax-item {
+            position: absolute;
+            transition: transform 0.2s ease-out;
+            opacity: 0.9;
+            will-change: transform;
+            z-index: 0;
+        }
+
+        .blog-parallax-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* تأثير الظهور التدريجي */
+        .blog-post, .sidebar-widget {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .blog-post.fade-in, .sidebar-widget.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .blog-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/blog-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-section {
+            padding: 5rem 0;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .blog-posts {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .blog-post {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 30px rgba(0, 119, 182, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+        }
+
+        .blog-post::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            transform: rotate(30deg);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.2);
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(0, 119, 182, 0.3);
+        }
+
+        .blog-post-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .blog-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-post:hover .blog-post-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-post-content {
+            padding: 2rem;
+        }
+
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .blog-post-meta span {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5rem;
+        }
+
+        .blog-post-meta i {
+            margin-left: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .blog-post-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .blog-post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-widget {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 30px rgba(0, 119, 182, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .sidebar-widget:hover {
+            box-shadow: 0 12px 35px rgba(0, 119, 182, 0.15);
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(0, 119, 182, 0.3);
+        }
+
+        .sidebar-widget::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            transform: rotate(30deg);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .sidebar-widget > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .categories-list li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .categories-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .categories-list a {
+            display: flex;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .categories-list a:hover {
+            color: var(--primary-color);
+            padding-right: 5px;
+        }
+
+        .categories-list span {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .recent-posts-list .recent-post {
+            display: flex;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recent-posts-list .recent-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .recent-post-image {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-left: 1rem;
+        }
+
+        .recent-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recent-post-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .recent-post-content .date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .pagination a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text-color);
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .pagination a:hover, .pagination a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 992px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- وسائل التواصل الاجتماعي العائمة -->
+    <div class="floating-social">
+        <a href="https://wa.me/967781811558" target="_blank" class="whatsapp" title="واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1EpNPyGMDH/" target="_blank" class="facebook" title="فيسبوك">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/yn.a_7?utm_source=qr&igsh=eThrcjNnZjFwbGZy" target="_blank" class="instagram" title="انستغرام">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://t.me/alehidm" target="_blank" class="telegram" title="تلغرام">
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+    </div>
+
+    <!-- Blog Parallax Background -->
+    <div class="blog-parallax-container">
+        <div class="blog-parallax-item" data-speed="0.3" data-rotation="5" data-scroll-speed="0.03" data-wave-speed="0.01" data-scale="1" style="top: 5%; left: 5%; width: 500px; height: 500px;">
+            <img src="images/blog-parallax-bg.svg" alt="">
+        </div>
+        <div class="blog-parallax-item" data-speed="0.5" data-rotation="-3" data-scroll-speed="0.05" data-wave-speed="0.02" data-scale="1.2" style="top: 50%; left: 60%; width: 600px; height: 600px;">
+            <img src="images/blog-parallax-bg.svg" alt="">
+        </div>
+        <div class="blog-parallax-item" data-speed="0.2" data-rotation="10" data-scroll-speed="0.02" data-wave-speed="0.03" data-scale="0.8" style="top: 20%; left: 70%; width: 450px; height: 450px;">
+            <img src="images/blog-parallax-bg.svg" alt="">
+        </div>
+        <div class="blog-parallax-item" data-speed="0.7" data-rotation="-8" data-scroll-speed="0.07" data-wave-speed="0.04" data-scale="1.1" style="top: 60%; left: 10%; width: 550px; height: 550px;">
+            <img src="images/blog-parallax-bg.svg" alt="">
+        </div>
+        <div class="blog-parallax-item" data-speed="0.4" data-rotation="15" data-scroll-speed="0.04" data-wave-speed="0.02" data-scale="0.9" style="top: 30%; left: 30%; width: 400px; height: 400px;">
+            <img src="images/blog-parallax-bg.svg" alt="">
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="324232484_874075607240339_2051289815059088702_n.jpg" alt="شعار مركز الأمل للعلاج الطبيعي">
+                </div>
+                <div class="logo-text">
+                    <h1>مركز الأمل للعلاج الطبيعي وإعادة التأهيل</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html"><i class="fas fa-hospital"></i> عن المركز</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html"><i class="fas fa-stethoscope"></i> خدماتنا</a>
+                        <ul class="dropdown">
+                            <li><a href="services.html#bone"><i class="fas fa-bone"></i> علاج إصابات العظام</a></li>
+                            <li><a href="services.html#rehab"><i class="fas fa-walking"></i> إعادة التأهيل الحركي</a></li>
+                            <li><a href="services.html#heart"><i class="fas fa-heartbeat"></i> العلاج الطبيعي للقلب</a></li>
+                            <li><a href="services.html#neuro"><i class="fas fa-brain"></i> العلاج العصبي</a></li>
+                            <li><a href="services.html#children"><i class="fas fa-child"></i> العلاج الطبيعي للأطفال</a></li>
+                            <li><a href="services.html#massage"><i class="fas fa-hands"></i> العلاج اليدوي</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html" class="active"><i class="fas fa-notes-medical"></i> نصائح طبية</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                    <li><a href="appointments.html" class="appointment-btn"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
+                    <li><a href="sitemap.html"><i class="fas fa-sitemap"></i> خريطة الموقع</a></li>
+                </ul>
+            </nav>
+            <div class="dark-mode-toggle" id="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>نصائح طبية</h1>
+            <p>مقالات ونصائح في مجال العلاج الطبيعي والصحة العامة</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-container">
+                <div class="blog-posts">
+                    <div class="blog-post">
+                        <div class="blog-post-image">
+                            <img src="images/blog1.jpg" alt="تمارين لتخفيف آلام أسفل الظهر">
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <span><i class="far fa-calendar-alt"></i> 15 يونيو 2023</span>
+                                <span><i class="far fa-user"></i> مركز الأمل للعلاج الطبيعي</span>
+                                <span><i class="far fa-folder"></i> آلام الظهر</span>
+                            </div>
+                            <h2>5 تمارين فعالة لتخفيف آلام أسفل الظهر</h2>
+                            <p>تعد آلام أسفل الظهر من المشاكل الشائعة التي يعاني منها الكثيرون، وغالباً ما تكون ناتجة عن قلة الحركة أو الجلوس لفترات طويلة أو رفع الأشياء الثقيلة بطريقة خاطئة. في هذا المقال، نقدم لكم 5 تمارين بسيطة يمكن ممارستها في المنزل للمساعدة في تخفيف آلام أسفل الظهر وتقوية عضلات الظهر...</p>
+                            <a href="article1.html" class="btn secondary-btn">اقرأ المزيد</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-post">
+                        <div class="blog-post-image">
+                            <img src="images/blog2.jpg" alt="العلاج الطبيعي بعد جراحة الركبة">
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <span><i class="far fa-calendar-alt"></i> 28 مايو 2023</span>
+                                <span><i class="far fa-user"></i> مركز الأمل للعلاج الطبيعي</span>
+                                <span><i class="far fa-folder"></i> إعادة التأهيل</span>
+                            </div>
+                            <h2>دليلك الشامل للعلاج الطبيعي بعد جراحة استبدال مفصل الركبة</h2>
+                            <p>تعتبر جراحة استبدال مفصل الركبة من العمليات الشائعة التي تهدف إلى تخفيف الألم وتحسين وظيفة المفصل لدى المرضى الذين يعانون من التهاب المفاصل الشديد أو إصابات الركبة. ومع ذلك، فإن نجاح هذه الجراحة يعتمد بشكل كبير على برنامج إعادة التأهيل والعلاج الطبيعي الذي يتبعه المريض بعد العملية...</p>
+                            <a href="article2.html" class="btn secondary-btn">اقرأ المزيد</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-post">
+                        <div class="blog-post-image">
+                            <img src="images/blog3.jpg" alt="تمارين للرقبة">
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <span><i class="far fa-calendar-alt"></i> 10 مايو 2023</span>
+                                <span><i class="far fa-user"></i> مركز الأمل للعلاج الطبيعي</span>
+                                <span><i class="far fa-folder"></i> آلام الرقبة</span>
+                            </div>
+                            <h2>تمارين بسيطة لتخفيف آلام الرقبة الناتجة عن العمل المكتبي</h2>
+                            <p>مع زيادة الاعتماد على أجهزة الكمبيوتر والهواتف الذكية في حياتنا اليومية، أصبحت آلام الرقبة مشكلة شائعة يعاني منها الكثيرون، خاصة من يعملون في وظائف مكتبية. في هذا المقال، نقدم مجموعة من التمارين البسيطة التي يمكن ممارستها أثناء العمل للمساعدة في تخفيف آلام الرقبة وتحسين وضعية الجسم...</p>
+                            <a href="article3.html" class="btn secondary-btn">اقرأ المزيد</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-post">
+                        <div class="blog-post-image">
+                            <img src="images/blog4.jpg" alt="العلاج الطبيعي للأطفال">
+                        </div>
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                <span><i class="far fa-calendar-alt"></i> 22 أبريل 2023</span>
+                                <span><i class="far fa-user"></i> مركز الأمل للعلاج الطبيعي</span>
+                                <span><i class="far fa-folder"></i> العلاج الطبيعي للأطفال</span>
+                            </div>
+                            <h2>أهمية العلاج الطبيعي في علاج تأخر النمو الحركي عند الأطفال</h2>
+                            <p>يعد تأخر النمو الحركي من المشاكل التي قد يواجهها بعض الأطفال خلال مراحل نموهم المبكرة. وهنا يأتي دور العلاج الطبيعي كأحد الحلول الفعالة للمساعدة في تحسين المهارات الحركية للطفل وتعزيز نموه بشكل سليم. في هذا المقال، نتناول أهمية العلاج الطبيعي في علاج تأخر النمو الحركي عند الأطفال...</p>
+                            <a href="article4.html" class="btn secondary-btn">اقرأ المزيد</a>
+                        </div>
+                    </div>
+
+                    <div class="pagination">
+                        <a href="blog.html" class="active">1</a>
+                        <a href="blog-page2.html">2</a>
+                        <a href="blog-page3.html">3</a>
+                        <a href="blog-page2.html"><i class="fas fa-chevron-left"></i></a>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>البحث</h3>
+                        <form class="search-form" id="blog-search-form">
+                            <div class="form-group">
+                                <input type="text" id="blog-search-input" placeholder="ابحث هنا...">
+                                <button type="submit" class="btn primary-btn">بحث</button>
+                            </div>
+                        </form>
+                        <div id="search-results" class="search-results"></div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>التصنيفات</h3>
+                        <ul class="categories-list">
+                            <li><a href="category-back.html">آلام الظهر <span>8</span></a></li>
+                            <li><a href="category-neck.html">آلام الرقبة <span>5</span></a></li>
+                            <li><a href="category-rehab.html">إعادة التأهيل <span>12</span></a></li>
+                            <li><a href="category-sports.html">إصابات الرياضة <span>7</span></a></li>
+                            <li><a href="category-children.html">العلاج الطبيعي للأطفال <span>4</span></a></li>
+                            <li><a href="category-exercises.html">تمارين منزلية <span>10</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>أحدث المقالات</h3>
+                        <div class="recent-posts-list">
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="images/blog1.jpg" alt="تمارين لتخفيف آلام أسفل الظهر">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="article1.html">5 تمارين فعالة لتخفيف آلام أسفل الظهر</a></h4>
+                                    <span class="date">15 يونيو 2023</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="images/blog2.jpg" alt="العلاج الطبيعي بعد جراحة الركبة">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="article2.html">دليلك الشامل للعلاج الطبيعي بعد جراحة استبدال مفصل الركبة</a></h4>
+                                    <span class="date">28 مايو 2023</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="images/blog3.jpg" alt="تمارين للرقبة">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="article3.html">تمارين بسيطة لتخفيف آلام الرقبة الناتجة عن العمل المكتبي</a></h4>
+                                    <span class="date">10 مايو 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>مركز الأمل للعلاج الطبيعي وإعادة التأهيل</h3>
+                    <p>نقدم خدمات علاج طبيعي متميزة بأحدث التقنيات وأفضل الممارسات العلاجية لمساعدتك على استعادة صحتك والتخلص من الألم.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المركز</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="blog.html">نصائح طبية</a></li>
+                        <li><a href="gallery.html">معرض الصور</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                        <li><a href="sitemap.html">خريطة الموقع</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h3>ساعات العمل</h3>
+                    <ul>
+                        <li>السبت - الخميس: 9:00 صباحاً - 8:00 مساءً</li>
+                        <li>الجمعة: مغلق</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 مركز الأمل للعلاج الطبيعي وإعادة التأهيل. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog-parallax.js"></script>
+    <script>
+        // Blog search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchForm = document.getElementById('blog-search-form');
+            const searchInput = document.getElementById('blog-search-input');
+            const searchResults = document.getElementById('search-results');
+
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const searchTerm = searchInput.value.trim();
+                    if (searchTerm.length < 2) {
+                        searchResults.innerHTML = '<p>الرجاء إدخال كلمة بحث تحتوي على حرفين على الأقل</p>';
+                        searchResults.style.display = 'block';
+                        return;
+                    }
+
+                    // Simulate search results (in a real application, this would query a database)
+                    const results = [
+                        {
+                            title: '5 تمارين فعالة لتخفيف آلام أسفل الظهر',
+                            url: 'article1.html',
+                            excerpt: 'تعد آلام أسفل الظهر من المشاكل الشائعة التي يعاني منها الكثيرون...'
+                        },
+                        {
+                            title: 'دليلك الشامل للعلاج الطبيعي بعد جراحة استبدال مفصل الركبة',
+                            url: 'article2.html',
+                            excerpt: 'تعتبر جراحة استبدال مفصل الركبة من العمليات الشائعة التي تهدف إلى تخفيف الألم...'
+                        },
+                        {
+                            title: 'تمارين بسيطة لتخفيف آلام الرقبة الناتجة عن العمل المكتبي',
+                            url: 'article3.html',
+                            excerpt: 'مع زيادة الاعتماد على أجهزة الكمبيوتر والهواتف الذكية في حياتنا اليومية...'
+                        }
+                    ];
+
+                    // Display results
+                    if (results.length > 0) {
+                        let resultsHTML = '';
+                        results.forEach(result => {
+                            resultsHTML += `
+                                <div class="search-result-item">
+                                    <h4><a href="${result.url}">${result.title}</a></h4>
+                                    <p>${result.excerpt}</p>
+                                </div>
+                            `;
+                        });
+                        searchResults.innerHTML = resultsHTML;
+                    } else {
+                        searchResults.innerHTML = '<p>لا توجد نتائج مطابقة لبحثك</p>';
+                    }
+
+                    searchResults.style.display = 'block';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

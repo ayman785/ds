@@ -1,0 +1,283 @@
+/* تحسينات إضافية للتوافق مع الأجهزة المحمولة */
+
+/* تحسينات عامة للأجهزة المحمولة */
+@media (max-width: 768px) {
+    /* تحسين حجم الخط والمسافات */
+    body {
+        font-size: 16px;
+    }
+    
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    /* تحسين الهيدر */
+    header {
+        padding: 0.5rem 0;
+    }
+    
+    /* تحسين الخلفية المتحركة */
+    .home-parallax-container,
+    .about-parallax-container,
+    .services-parallax-container,
+    .blog-parallax-container,
+    .gallery-parallax-container {
+        opacity: 0.5; /* تقليل شفافية الخلفية على الأجهزة المحمولة لتحسين الأداء */
+    }
+    
+    /* تحسين أقسام الصفحة */
+    section {
+        padding: 3rem 0;
+    }
+    
+    .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    /* تحسين الأزرار */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* تحسين قسم الخدمات */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* تحسين قسم الشهادات */
+    .testimonials-slider {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* تحسين قسم الاتصال */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* تحسين الفوتر */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* تحسينات للهواتف الصغيرة */
+@media (max-width: 576px) {
+    /* تحسين الهيدر */
+    .logo-image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo h1 {
+        font-size: 1rem;
+    }
+    
+    .logo p {
+        font-size: 0.7rem;
+    }
+    
+    /* تحسين قسم البطل */
+    .hero {
+        padding: 4rem 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* تحسين بطاقات الخدمات */
+    .service-card {
+        padding: 1.2rem;
+    }
+    
+    .service-icon {
+        font-size: 2rem;
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    /* تحسين قسم عن الدكتور */
+    .about-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* تحسين قسم الشهادات */
+    .testimonial-card {
+        padding: 1.2rem;
+    }
+    
+    /* تحسين نموذج الاتصال */
+    .contact-form {
+        padding: 1.2rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group input, .form-group textarea, .form-group select {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    /* تحسين الفوتر */
+    footer {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-about h3, .footer-links h3, .footer-hours h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* تحسينات للأجهزة اللوحية */
+@media (min-width: 577px) and (max-width: 991px) {
+    /* تحسين الهيدر */
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    
+    /* تحسين قسم البطل */
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    /* تحسين قسم الخدمات */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* تحسين قسم عن الدكتور */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        margin-bottom: 2rem;
+    }
+    
+    /* تحسين قسم الشهادات */
+    .testimonials-slider {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* تحسينات للخلفية المتحركة على الأجهزة المحمولة */
+@media (max-width: 768px) {
+    /* تقليل عدد العناصر المتحركة لتحسين الأداء */
+    .home-parallax-item:nth-child(n+4),
+    .about-parallax-item:nth-child(n+4),
+    .services-parallax-item:nth-child(n+4),
+    .blog-parallax-item:nth-child(n+4),
+    .gallery-parallax-item:nth-child(n+4) {
+        display: none;
+    }
+    
+    /* تقليل حجم العناصر المتحركة */
+    .home-parallax-item,
+    .about-parallax-item,
+    .services-parallax-item,
+    .blog-parallax-item,
+    .gallery-parallax-item {
+        transform: scale(0.7);
+    }
+    
+    /* تعطيل تأثيرات الحركة المعقدة على الأجهزة المحمولة */
+    .pulse-element, .wave-element, .rotate-element, .glow-element {
+        animation: none;
+    }
+}
+
+/* تحسينات للصور */
+@media (max-width: 768px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .doctor-image {
+        height: 300px !important;
+    }
+    
+    .gallery-item {
+        height: 200px !important;
+    }
+}
+
+/* تحسينات للنصوص */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+/* تحسينات للتنقل بين الصفحات */
+@media (max-width: 768px) {
+    .pagination a {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+/* تحسينات للشاتبوت */
+@media (max-width: 768px) {
+    .chatbot-container {
+        width: 300px;
+        right: 10px;
+        bottom: 70px;
+    }
+    
+    .chatbot-messages {
+        max-height: 300px;
+    }
+}
+
+/* تحسينات لوسائل التواصل الاجتماعي العائمة */
+@media (max-width: 768px) {
+    .floating-social {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .floating-social a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}

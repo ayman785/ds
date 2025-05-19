@@ -1,0 +1,159 @@
+/* أنماط التطبيق المثبت */
+
+/* حاوية زر التثبيت */
+.install-container {
+    position: fixed;
+    bottom: 70px;
+    left: 20px;
+    z-index: 1000;
+    background-color: rgba(0, 119, 182, 0.9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    display: none;
+}
+
+.install-container:hover {
+    background-color: rgba(0, 119, 182, 1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.install-container i {
+    margin-left: 8px;
+}
+
+/* شريط حالة الاتصال */
+.connection-status {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 12px;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.connection-status.online {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.connection-status.offline {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+}
+
+.connection-status i {
+    margin-left: 5px;
+}
+
+/* تعديلات للتطبيق المثبت */
+@media all and (display-mode: standalone) {
+    /* إخفاء بعض العناصر في وضع التطبيق المثبت */
+    .install-container {
+        display: none !important;
+    }
+    
+    /* تعديل الهيدر في وضع التطبيق المثبت */
+    header {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: 10px;
+    }
+    
+    /* تعديل الفوتر في وضع التطبيق المثبت */
+    footer {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    /* تعديل الهوامش للأجهزة ذات الشاشات المنحنية */
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+    
+    /* تعديل شريط التنقل السفلي */
+    .bottom-nav {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* شريط التنقل السفلي للتطبيق المثبت */
+.bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.bottom-nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 12px;
+}
+
+.bottom-nav-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.bottom-nav-item.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* إظهار شريط التنقل السفلي في وضع التطبيق المثبت */
+@media all and (display-mode: standalone) {
+    .bottom-nav {
+        display: block;
+    }
+    
+    /* إضافة هامش للمحتوى لتجنب التداخل مع شريط التنقل السفلي */
+    main, section:last-of-type {
+        margin-bottom: 70px;
+    }
+}
+
+/* إظهار شريط التنقل السفلي على الأجهزة المحمولة */
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: block;
+    }
+    
+    /* إضافة هامش للمحتوى لتجنب التداخل مع شريط التنقل السفلي */
+    main, section:last-of-type {
+        margin-bottom: 70px;
+    }
+}

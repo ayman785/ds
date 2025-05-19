@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - د. إبراهيم مقبل الضبيبي للعلاج الطبيعي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fix-styles.css">
+    <link rel="stylesheet" href="floating-social.css">
+    <link rel="stylesheet" href="enhanced-chatbot.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="fix-appointment-btn.css">
+    <link rel="stylesheet" href="logo-position.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page specific styles */
+        body {
+            position: relative;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(240, 249, 255, 0.8), rgba(255, 255, 255, 0.8));
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwzMCBMIDMwLDMwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.6;
+            z-index: -1;
+        }
+        .contact-hero {
+            background: linear-gradient(rgba(0, 77, 122, 0.85), rgba(0, 180, 216, 0.85)), url('images/contact-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxwYXRoIGQ9Ik0gMCwzMCBMIDMwLDMwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgZmlsbD0ibm9uZSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-hero p {
+            position: relative;
+            z-index: 1;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-section {
+            padding: 5rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            color: #0077b6;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .contact-info h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0077b6, #00b4d8);
+            border-radius: 2px;
+        }
+
+        .contact-details {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.8rem;
+            background: linear-gradient(135deg, #ffffff, #f0f9ff);
+            border-radius: 15px;
+            padding: 1.2rem;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 119, 182, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwxMCBMIDIwLDEwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.15);
+        }
+
+        .contact-item i {
+            font-size: 1.6rem;
+            color: #0077b6;
+            margin-left: 1.2rem;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 119, 182, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 119, 182, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item:hover i {
+            transform: rotate(10deg);
+            background-color: rgba(0, 119, 182, 0.15);
+            color: #00b4d8;
+        }
+
+        .contact-item-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #0077b6;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            color: white;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 119, 182, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-links a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            z-index: 1;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, #023e8a, #0077b6);
+            transform: translateY(-5px) rotate(5deg);
+            box-shadow: 0 8px 25px rgba(0, 119, 182, 0.3);
+        }
+
+        .social-links a i {
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-form-container {
+            background: linear-gradient(135deg, #ffffff, #f0f9ff);
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.1);
+            padding: 2.5rem;
+            border: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #0077b6, #00b4d8);
+            z-index: 1;
+            transition: height 0.3s ease;
+        }
+
+        .contact-form-container:hover::before {
+            height: 8px;
+        }
+
+        .contact-form-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwxMCBMIDIwLDEwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .contact-form-container > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-form-container h2 {
+            font-size: 2.2rem;
+            color: #0077b6;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .contact-form-container h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0077b6, #00b4d8);
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid rgba(0, 119, 182, 0.1);
+            border-radius: 10px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0, 119, 182, 0.05);
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: #0077b6;
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-3px);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: #0077b6;
+            font-size: 1.05rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* تنسيق قسم الخريطة */
+        .map-section {
+            margin-top: 60px;
+            background: linear-gradient(135deg, #ffffff, #f0f9ff);
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.1);
+            padding: 40px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #0077b6, #00b4d8);
+            z-index: 1;
+        }
+
+        .map-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwxMCBMIDIwLDEwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .map-title {
+            color: #0077b6;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            font-weight: 700;
+        }
+
+        .map-description {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.15);
+            border: none;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 8px solid white;
+            border-radius: 15px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-actions {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            min-width: 220px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.1);
+        }
+
+        .map-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 119, 182, 0.2);
+        }
+
+        .map-btn i {
+            margin-left: 12px;
+            font-size: 1.3rem;
+        }
+
+        .map-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-info-item {
+            display: flex;
+            align-items: flex-start;
+            background: linear-gradient(135deg, #ffffff, #f0f9ff);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 119, 182, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-info-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwxMCBMIDIwLDEwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .map-info-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.15);
+        }
+
+        .map-info-item i {
+            font-size: 2.2rem;
+            color: #0077b6;
+            margin-left: 20px;
+            min-width: 50px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .map-info-item:hover i {
+            color: #00b4d8;
+            transform: rotate(10deg);
+        }
+
+        .map-info-item h3 {
+            color: #0077b6;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-info-item p {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .map-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+
+            .map-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="324232484_874075607240339_2051289815059088702_n.jpg" alt="شعار مركز الأمل للعلاج الطبيعي">
+                </div>
+                <div class="logo-text">
+                    <h1>مركز الأمل للعلاج الطبيعي وإعادة التأهيل</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html"><i class="fas fa-hospital"></i> عن المركز</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html"><i class="fas fa-stethoscope"></i> خدماتنا</a>
+                        <ul class="dropdown">
+                            <li><a href="services.html#bone"><i class="fas fa-bone"></i> علاج إصابات العظام</a></li>
+                            <li><a href="services.html#rehab"><i class="fas fa-walking"></i> إعادة التأهيل الحركي</a></li>
+                            <li><a href="services.html#stroke"><img src="stroke-therapy.svg" style="width: 16px; height: 16px; margin-left: 5px;"> علاج الجلطات</a></li>
+                            <li><a href="services.html#neuro"><i class="fas fa-brain"></i> العلاج العصبي</a></li>
+                            <li><a href="services.html#children"><i class="fas fa-child"></i> العلاج الطبيعي للأطفال</a></li>
+                            <li><a href="services.html#massage"><i class="fas fa-hands"></i> العلاج اليدوي</a></li>
+                            <li><a href="services.html#cupping"><i class="fas fa-pump-medical"></i> الحجامة</a></li>
+                            <li><a href="services.html#acupuncture"><i class="fas fa-syringe"></i> العلاج بالإبر الصينية</a></li>
+                            <li><a href="services.html#dry-needling"><i class="fas fa-thumbtack"></i> العلاج بالإبر الجافة</a></li>
+                            <li><a href="services.html#awareness"><i class="fas fa-users"></i> برامج التوعية</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a></li>
+                    <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                    <li><a href="appointments.html" class="appointment-btn"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
+                    <li><a href="sitemap.html"><i class="fas fa-sitemap"></i> خريطة الموقع</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>اتصل بنا</h1>
+            <p>نحن هنا للإجابة على استفساراتك ومساعدتك في حجز موعد</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>معلومات الاتصال</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-item-content">
+                                <h3>اتصل بنا</h3>
+                                <p><a href="tel:+967781811558" class="contact-link">0781 811 558</a></p>
+                                <p><a href="tel:+967772890773" class="contact-link">0772 890 773</a></p>
+                                <p>واتساب: <a href="https://wa.me/967781811558" target="_blank" class="contact-link">0781 811 558</a></p>
+                                <p>واتساب: <a href="https://wa.me/967772890773" target="_blank" class="contact-link">0772 890 773</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-item-content">
+                                <h3>البريد الإلكتروني</h3>
+                                <p><a href="mailto:alamil.center.vip@gmail.com" class="contact-link">alamil.center.vip@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-item-content">
+                                <h3>العنوان</h3>
+                                <p><a href="https://www.google.com/maps/place/MX62%2BRHF" target="_blank" class="contact-link">عمران، اليمن - MX62+RHF</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-item-content">
+                                <h3>ساعات العمل</h3>
+                                <p>السبت - الخميس: الفترة الصباحية ٨:٠٠ ص - ١:٠٠ م</p>
+                                <p>السبت - الخميس: الفترة المسائية ٢:٠٠ م - ٦:٠٠ م</p>
+                                <p>الجمعة: مغلق</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>تابعنا على وسائل التواصل الاجتماعي</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1EpNPyGMDH/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/yn.a_7?utm_source=qr&igsh=eThrcjNnZjFwbGZy" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://t.me/alehidm" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://wa.me/967781811558" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h2>ارسل رسالة</h2>
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">الاسم الكامل</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointment-date">تاريخ الموعد</label>
+                                <input type="date" id="appointment-date" name="appointment-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-time">وقت الموعد</label>
+                                <select id="appointment-time" name="appointment-time" required>
+                                    <option value="" disabled selected>اختر الوقت</option>
+                                    <option value="09:00">09:00 صباحاً</option>
+                                    <option value="10:00">10:00 صباحاً</option>
+                                    <option value="11:00">11:00 صباحاً</option>
+                                    <option value="12:00">12:00 ظهراً</option>
+                                    <option value="13:00">01:00 مساءً</option>
+                                    <option value="14:00">02:00 مساءً</option>
+                                    <option value="15:00">03:00 مساءً</option>
+                                    <option value="16:00">04:00 مساءً</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">ملاحظات إضافية</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <p style="margin-bottom: 10px; color: #0077b6;"><i class="fab fa-whatsapp" style="margin-left: 5px;"></i> سيتم إرسال طلب الحجز عبر الواتساب</p>
+                        </div>
+                        <button type="submit" class="btn primary-btn whatsapp-btn" style="width: 100%; background-color: #25D366; display: flex; justify-content: center; align-items: center;">
+                            <i class="fab fa-whatsapp" style="margin-left: 10px; font-size: 20px;"></i>
+                            إرسال عبر الواتساب
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="map" class="map-section">
+                <h2 class="map-title">موقعنا على الخريطة</h2>
+                <p class="map-description">يقع مركز الأمل للعلاج الطبيعي وإعادة التأهيل في موقع مركزي في محافظة عمران، اليمن. يمكنك الوصول إلينا بسهولة باستخدام الإحداثيات: MX62+RHF</p>
+
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.3307559217!2d43.94!3d16.33!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1603c2f884268b1d%3A0xec59ad0d39d8db0c!2sMX62%2BRHF!5e0!3m2!1sar!2s!4v1623456789012!5m2!1sar!2s" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="map-actions">
+                    <a href="https://www.google.com/maps/place/MX62%2BRHF" target="_blank" class="btn secondary-btn map-btn">
+                        <i class="fas fa-directions"></i> الحصول على الاتجاهات
+                    </a>
+                    <a href="tel:+967781811558" class="btn primary-btn map-btn">
+                        <i class="fas fa-phone"></i> اتصل بنا للتوجيه
+                    </a>
+                </div>
+
+                <div class="map-info">
+                    <div class="map-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>العنوان</h3>
+                            <p>مركز الأمل للعلاج الطبيعي وإعادة التأهيل، عمران، اليمن - MX62+RHF</p>
+                        </div>
+                    </div>
+                    <div class="map-info-item">
+                        <i class="fas fa-car"></i>
+                        <div>
+                            <h3>وسائل النقل</h3>
+                            <p>يمكن الوصول إلى المركز بسهولة عبر السيارة الخاصة أو سيارات الأجرة. يتوفر موقف سيارات مجاني للمرضى.</p>
+                        </div>
+                    </div>
+                    <div class="map-info-item">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <h3>معالم قريبة</h3>
+                            <p>يقع المركز بالقرب من [معالم محلية معروفة في عمران]، مما يجعله سهل الوصول والتعرف عليه.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>مركز الأمل للعلاج الطبيعي وإعادة التأهيل</h3>
+                    <p>نقدم خدمات علاج طبيعي متميزة بأحدث التقنيات وأفضل الممارسات العلاجية لمساعدتك على استعادة صحتك والتخلص من الألم.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المركز</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+
+                        <li><a href="gallery.html">معرض الصور</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                        <li><a href="sitemap.html">خريطة الموقع</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h3>ساعات العمل</h3>
+                    <ul>
+                        <li>السبت - الخميس: الفترة الصباحية ٨:٠٠ ص - ١:٠٠ م</li>
+                        <li>السبت - الخميس: الفترة المسائية ٢:٠٠ م - ٦:٠٠ م</li>
+                        <li>الجمعة: مغلق</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 مركز الأمل للعلاج الطبيعي وإعادة التأهيل. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('appointment-date').value;
+            const time = document.getElementById('appointment-time').value;
+            const message = document.getElementById('message').value;
+
+            // Simple validation
+            if (!name || !phone || !email || !date || !time) {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+
+            // Create appointment message
+            const appointmentMessage = `
+طلب حجز موعد جديد من موقع مركز الأمل للعلاج الطبيعي:
+---------------------------
+الاسم: ${name}
+رقم الهاتف: ${phone}
+البريد الإلكتروني: ${email}
+تاريخ الموعد: ${date}
+وقت الموعد: ${time}
+ملاحظات: ${message}
+---------------------------
+`;
+
+            // Send to WhatsApp only
+            const whatsappUrl = `https://wa.me/967781811558?text=${encodeURIComponent(appointmentMessage)}`;
+            window.open(whatsappUrl, '_blank');
+
+            // Show success message
+            alert('تم إرسال طلب الحجز بنجاح عبر الواتساب. سنتواصل معك قريباً لتأكيد الموعد.');
+
+            // Reset form
+            this.reset();
+        });
+    </script>
+    <script src="enhanced-chatbot.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إصابات الركبة الشائعة عند الرياضيين وطرق علاجها - د. إبراهيم مقبل الضبيبي للعلاج الطبيعي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fix-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .article-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/sports1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .article-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+        }
+
+        .article-meta i {
+            margin-left: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .article-section {
+            padding: 5rem 0;
+        }
+
+        .article-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .article-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .article-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .article-content blockquote {
+            border-right: 4px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background-color: var(--light-color);
+            font-style: italic;
+        }
+
+        .article-share {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .article-share span {
+            margin-left: 1rem;
+            font-weight: 500;
+        }
+
+        .article-share a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            margin-left: 0.5rem;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .article-tags a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--light-color);
+            border-radius: 30px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .article-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="324232484_874075607240339_2051289815059088702_n.jpg" alt="شعار د. إبراهيم مقبل الضبيبي">
+                </div>
+                <div class="logo-text">
+                    <h1>مركز الأمل للعلاج الطبيعي وإعادة التأهيل</h1>
+                    <p>د. إبراهيم مقبل الضبيبي - أخصائي العلاج الطبيعي</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html"><i class="fas fa-user-md"></i> عن الدكتور</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html"><i class="fas fa-stethoscope"></i> خدماتنا</a>
+                        <ul class="dropdown">
+                            <li><a href="services.html#bone"><i class="fas fa-bone"></i> علاج إصابات العظام</a></li>
+                            <li><a href="services.html#rehab"><i class="fas fa-walking"></i> إعادة التأهيل الحركي</a></li>
+                            <li><a href="services.html#heart"><i class="fas fa-heartbeat"></i> العلاج الطبيعي للقلب</a></li>
+                            <li><a href="services.html#neuro"><i class="fas fa-brain"></i> العلاج العصبي</a></li>
+                            <li><a href="services.html#children"><i class="fas fa-child"></i> العلاج الطبيعي للأطفال</a></li>
+                            <li><a href="services.html#massage"><i class="fas fa-hands"></i> العلاج اليدوي</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html" class="active"><i class="fas fa-notes-medical"></i> نصائح طبية</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                    <li><a href="appointments.html" class="appointment-btn"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
+                </ul>
+            </nav>
+            <div class="dark-mode-toggle" id="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="article-hero">
+        <div class="container">
+            <h1>إصابات الركبة الشائعة عند الرياضيين وطرق علاجها</h1>
+            <div class="article-meta">
+                <span><i class="far fa-calendar-alt"></i> 10 يونيو 2023</span>
+                <span><i class="far fa-user"></i> د. إبراهيم الضبيبي</span>
+                <span><i class="far fa-folder"></i> إصابات الرياضة</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Section -->
+    <section class="article-section">
+        <div class="container">
+            <div class="article-container">
+                <div class="article-content">
+                    <p>تعد إصابات الركبة من أكثر الإصابات شيوعاً بين الرياضيين، خاصة في الرياضات التي تتطلب الجري والقفز وتغيير الاتجاهات بشكل مفاجئ. في هذا المقال، نتناول أنواع إصابات الركبة الشائعة مثل تمزق الرباط الصليبي والغضروف الهلالي، وطرق تشخيصها وعلاجها، بالإضافة إلى برامج إعادة التأهيل المناسبة.</p>
+
+                    <h2>أنواع إصابات الركبة الشائعة عند الرياضيين</h2>
+
+                    <h3>1. تمزق الرباط الصليبي الأمامي (ACL)</h3>
+                    <p>يعد تمزق الرباط الصليبي الأمامي من أكثر إصابات الركبة شيوعاً وخطورة عند الرياضيين. يحدث هذا التمزق غالباً نتيجة:</p>
+                    <ul>
+                        <li>تغيير مفاجئ في اتجاه الحركة</li>
+                        <li>التوقف المفاجئ أثناء الجري</li>
+                        <li>الهبوط بشكل خاطئ بعد القفز</li>
+                        <li>الاصطدام المباشر بالركبة</li>
+                    </ul>
+                    <p>تشمل أعراض تمزق الرباط الصليبي الأمامي:</p>
+                    <ul>
+                        <li>صوت فرقعة في الركبة لحظة الإصابة</li>
+                        <li>ألم شديد وتورم سريع</li>
+                        <li>عدم القدرة على إكمال النشاط الرياضي</li>
+                        <li>عدم استقرار الركبة وشعور بأنها "تنزلق"</li>
+                    </ul>
+
+                    <h3>2. تمزق الغضروف الهلالي (Meniscus Tear)</h3>
+                    <p>الغضروف الهلالي هو قطعة من الغضروف على شكل هلال تعمل كوسادة بين عظمتي الفخذ والساق. يمكن أن يتمزق نتيجة:</p>
+                    <ul>
+                        <li>الالتواء المفاجئ للركبة</li>
+                        <li>الدوران مع تثبيت القدم على الأرض</li>
+                        <li>القرفصاء العميقة</li>
+                    </ul>
+                    <p>تشمل أعراض تمزق الغضروف الهلالي:</p>
+                    <ul>
+                        <li>ألم في خط مفصل الركبة</li>
+                        <li>تورم يتطور خلال 24-48 ساعة</li>
+                        <li>صعوبة في ثني أو مد الركبة بالكامل</li>
+                        <li>شعور بأن الركبة "تعلق" أو "تقفل"</li>
+                    </ul>
+
+                    <h3>3. التهاب الوتر الرضفي (Patellar Tendinitis)</h3>
+                    <p>يُعرف أيضاً باسم "ركبة القافز" (Jumper's Knee)، وهو التهاب في الوتر الذي يربط الرضفة (عظمة الركبة) بعظمة الساق. يحدث غالباً نتيجة:</p>
+                    <ul>
+                        <li>الإجهاد المتكرر من القفز والهبوط</li>
+                        <li>زيادة حدة التدريب بشكل مفاجئ</li>
+                        <li>التدريب على أسطح صلبة</li>
+                    </ul>
+                    <p>تشمل الأعراض:</p>
+                    <ul>
+                        <li>ألم أسفل الرضفة، خاصة عند القفز أو صعود الدرج</li>
+                        <li>ألم يزداد مع النشاط ويخف مع الراحة</li>
+                        <li>تيبس بعد الجلوس لفترة طويلة</li>
+                    </ul>
+
+                    <h3>4. متلازمة الألم الرضفي الفخذي (Patellofemoral Pain Syndrome)</h3>
+                    <p>تُعرف أيضاً باسم "ركبة العداء" (Runner's Knee)، وهي ألم حول أو خلف الرضفة. تحدث نتيجة:</p>
+                    <ul>
+                        <li>عدم توازن العضلات حول الركبة</li>
+                        <li>تتبع غير صحيح للرضفة أثناء ثني وبسط الركبة</li>
+                        <li>الإجهاد المتكرر من الجري أو القفز</li>
+                    </ul>
+                    <p>تشمل الأعراض:</p>
+                    <ul>
+                        <li>ألم حول الرضفة، خاصة عند صعود أو نزول الدرج</li>
+                        <li>ألم عند الجلوس لفترة طويلة مع ثني الركبة</li>
+                        <li>طقطقة أو فرقعة في الركبة</li>
+                    </ul>
+
+                    <h2>تشخيص إصابات الركبة</h2>
+                    <p>يعتمد تشخيص إصابات الركبة على:</p>
+                    <ul>
+                        <li><strong>التاريخ الطبي:</strong> معرفة آلية الإصابة والأعراض</li>
+                        <li><strong>الفحص السريري:</strong> اختبارات خاصة مثل اختبار الدرج الأمامي (Anterior Drawer Test) للرباط الصليبي الأمامي، واختبار ماكموري (McMurray Test) للغضروف الهلالي</li>
+                        <li><strong>التصوير الطبي:</strong> الأشعة السينية، التصوير بالرنين المغناطيسي (MRI)، أو التصوير بالموجات فوق الصوتية</li>
+                    </ul>
+
+                    <h2>العلاج والتأهيل</h2>
+
+                    <h3>1. العلاج الأولي (PRICE)</h3>
+                    <p>يُنصح باتباع بروتوكول PRICE في الأيام الأولى بعد الإصابة:</p>
+                    <ul>
+                        <li><strong>Protection (الحماية):</strong> حماية المنطقة المصابة من المزيد من الإصابات</li>
+                        <li><strong>Rest (الراحة):</strong> تجنب الأنشطة التي تسبب الألم</li>
+                        <li><strong>Ice (الثلج):</strong> وضع كمادات ثلج لمدة 15-20 دقيقة كل 2-3 ساعات</li>
+                        <li><strong>Compression (الضغط):</strong> استخدام رباط ضاغط لتقليل التورم</li>
+                        <li><strong>Elevation (الرفع):</strong> رفع الطرف المصاب فوق مستوى القلب</li>
+                    </ul>
+
+                    <h3>2. العلاج الطبيعي</h3>
+                    <p>يلعب العلاج الطبيعي دوراً أساسياً في علاج إصابات الركبة وإعادة التأهيل، ويشمل:</p>
+                    <ul>
+                        <li><strong>تمارين المدى الحركي:</strong> لاستعادة حركة المفصل الطبيعية</li>
+                        <li><strong>تمارين القوة:</strong> لتقوية العضلات المحيطة بالركبة، خاصة العضلة الرباعية الرؤوس والعضلات الخلفية للفخذ</li>
+                        <li><strong>تمارين التوازن والتنسيق:</strong> لتحسين استقرار المفصل</li>
+                        <li><strong>العلاج اليدوي:</strong> تقنيات لتحسين حركة المفصل وتخفيف التوتر العضلي</li>
+                        <li><strong>العلاج الكهربائي:</strong> مثل الموجات فوق الصوتية أو التحفيز الكهربائي للعضلات</li>
+                    </ul>
+
+                    <h3>3. العلاج الجراحي</h3>
+                    <p>قد يكون العلاج الجراحي ضرورياً في بعض الحالات، مثل:</p>
+                    <ul>
+                        <li>التمزق الكامل للرباط الصليبي الأمامي، خاصة للرياضيين الذين يرغبون في العودة إلى المستوى التنافسي</li>
+                        <li>تمزقات الغضروف الهلالي الكبيرة أو التي لا تستجيب للعلاج التحفظي</li>
+                        <li>إصابات متعددة في الركبة</li>
+                    </ul>
+
+                    <h2>برنامج إعادة التأهيل بعد إصابات الركبة</h2>
+                    <p>يمر برنامج إعادة التأهيل بعدة مراحل:</p>
+
+                    <h3>المرحلة الأولى: التحكم في الألم والتورم (1-2 أسبوع)</h3>
+                    <ul>
+                        <li>تطبيق بروتوكول PRICE</li>
+                        <li>تمارين تحريك الكاحل لتنشيط الدورة الدموية</li>
+                        <li>تمارين إطالة خفيفة</li>
+                        <li>انقباضات ثابتة للعضلة الرباعية الرؤوس</li>
+                    </ul>
+
+                    <h3>المرحلة الثانية: استعادة المدى الحركي (2-4 أسابيع)</h3>
+                    <ul>
+                        <li>تمارين ثني وبسط الركبة بشكل تدريجي</li>
+                        <li>تمارين تقوية خفيفة للعضلات المحيطة بالركبة</li>
+                        <li>تمارين تحمل وزن جزئي</li>
+                        <li>تمارين توازن أساسية</li>
+                    </ul>
+
+                    <h3>المرحلة الثالثة: تقوية العضلات (4-8 أسابيع)</h3>
+                    <ul>
+                        <li>تمارين تقوية متقدمة للعضلات الرباعية الرؤوس والخلفية للفخذ</li>
+                        <li>تمارين تحمل وزن كامل</li>
+                        <li>تمارين توازن متقدمة</li>
+                        <li>تمارين وظيفية مثل الصعود والنزول من الدرج</li>
+                    </ul>
+
+                    <h3>المرحلة الرابعة: العودة إلى النشاط الرياضي (8-12 أسبوع وما بعد)</h3>
+                    <ul>
+                        <li>تمارين خاصة بالرياضة</li>
+                        <li>تمارين البليومترك (القفز)</li>
+                        <li>تمارين تغيير الاتجاه والتسارع</li>
+                        <li>العودة التدريجية للتدريب والمنافسة</li>
+                    </ul>
+
+                    <h2>نصائح للوقاية من إصابات الركبة</h2>
+                    <ul>
+                        <li><strong>الإحماء الجيد:</strong> قبل أي نشاط رياضي</li>
+                        <li><strong>تقوية العضلات:</strong> خاصة العضلات الرباعية الرؤوس والخلفية للفخذ</li>
+                        <li><strong>تحسين المرونة:</strong> من خلال تمارين الإطالة المنتظمة</li>
+                        <li><strong>تحسين التقنية:</strong> تعلم التقنيات الصحيحة للهبوط بعد القفز وتغيير الاتجاه</li>
+                        <li><strong>استخدام الأحذية المناسبة:</strong> التي توفر دعماً جيداً للقدم والكاحل</li>
+                        <li><strong>زيادة شدة التدريب تدريجياً:</strong> تجنب الزيادة المفاجئة في حجم أو شدة التدريب</li>
+                    </ul>
+
+                    <h2>الخلاصة</h2>
+                    <p>إصابات الركبة شائعة بين الرياضيين، ولكن مع التشخيص المبكر والعلاج المناسب وبرنامج إعادة تأهيل شامل، يمكن للرياضيين العودة إلى مستوياتهم السابقة. الوقاية تبقى هي الاستراتيجية الأفضل، من خلال برامج تقوية وتحسين التقنية والإحماء الجيد قبل النشاط الرياضي.</p>
+
+                    <div class="article-tags">
+                        <a href="category-sports.html">إصابات الرياضة</a>
+                        <a href="category-rehab.html">إعادة التأهيل</a>
+                    </div>
+
+                    <div class="article-share">
+                        <span>مشاركة المقال:</span>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>أحدث المقالات</h3>
+                        <div class="recent-posts-list">
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="images/blog1.jpg" alt="تمارين لتخفيف آلام أسفل الظهر">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="article1.html">5 تمارين فعالة لتخفيف آلام أسفل الظهر</a></h4>
+                                    <span class="date">15 يونيو 2023</span>
+                                </div>
+                            </div>
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="images/blog2.jpg" alt="العلاج الطبيعي بعد جراحة الركبة">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="article2.html">دليلك الشامل للعلاج الطبيعي بعد جراحة استبدال مفصل الركبة</a></h4>
+                                    <span class="date">28 مايو 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>التصنيفات</h3>
+                        <ul class="categories-list">
+                            <li><a href="category-back.html">آلام الظهر <span>8</span></a></li>
+                            <li><a href="category-neck.html">آلام الرقبة <span>5</span></a></li>
+                            <li><a href="category-rehab.html">إعادة التأهيل <span>12</span></a></li>
+                            <li><a href="category-sports.html" class="active">إصابات الرياضة <span>7</span></a></li>
+                            <li><a href="category-children.html">العلاج الطبيعي للأطفال <span>4</span></a></li>
+                            <li><a href="category-exercises.html">تمارين منزلية <span>10</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>عيادة د. إبراهيم مقبل الضبيبي</h3>
+                    <p>نقدم خدمات علاج طبيعي متميزة بأحدث التقنيات وأفضل الممارسات العلاجية لمساعدتك على استعادة صحتك والتخلص من الألم.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن الدكتور</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="blog.html">نصائح طبية</a></li>
+                        <li><a href="gallery.html">معرض الصور</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h3>ساعات العمل</h3>
+                    <ul>
+                        <li>السبت - الخميس: 9:00 صباحاً - 8:00 مساءً</li>
+                        <li>الجمعة: مغلق</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 عيادة د. إبراهيم مقبل الضبيبي للعلاج الطبيعي. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

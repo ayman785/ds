@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز موعد - د. إبراهيم مقبل الضبيبي للعلاج الطبيعي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fix-styles.css">
+    <link rel="stylesheet" href="enhanced-chatbot.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="fix-appointment-btn.css">
+    <link rel="stylesheet" href="logo-position.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page specific styles */
+        body {
+            position: relative;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(240, 249, 255, 0.8), rgba(255, 255, 255, 0.8));
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwzMCBMIDMwLDMwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.6;
+            z-index: -1;
+        }
+        .appointments-hero {
+            background: linear-gradient(rgba(0, 77, 122, 0.85), rgba(0, 180, 216, 0.85)), url('images/appointments-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointments-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxwYXRoIGQ9Ik0gMCwzMCBMIDMwLDMwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgZmlsbD0ibm9uZSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .appointments-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .appointments-hero p {
+            position: relative;
+            z-index: 1;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .appointments-section {
+            padding: 5rem 0;
+        }
+
+        .appointments-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .appointment-info h2 {
+            font-size: 2.5rem;
+            color: #0077b6;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .appointment-info h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0077b6, #00b4d8);
+            border-radius: 2px;
+        }
+
+        .appointment-info p {
+            margin-bottom: 1.8rem;
+            line-height: 1.7;
+            color: #333;
+            font-size: 1.05rem;
+        }
+
+        .appointment-steps {
+            margin-bottom: 2.5rem;
+        }
+
+        .appointment-step {
+            display: flex;
+            margin-bottom: 1.8rem;
+            background: linear-gradient(135deg, #ffffff, #f0f9ff);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 119, 182, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment-step::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwxMCBMIDIwLDEwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .appointment-step:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.15);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            color: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-left: 1.2rem;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 119, 182, 0.2);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .appointment-step:hover .step-number {
+            transform: rotate(10deg);
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
+        }
+
+        .step-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: #0077b6;
+            font-weight: 600;
+        }
+
+        .step-content p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .appointment-form-container {
+            background: linear-gradient(135deg, #ffffff, #f0f9ff);
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.1);
+            padding: 2.5rem;
+            border: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment-form-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #0077b6, #00b4d8);
+            z-index: 1;
+            transition: height 0.3s ease;
+        }
+
+        .appointment-form-container:hover::before {
+            height: 8px;
+        }
+
+        .appointment-form-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwxMCBMIDIwLDEwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .appointment-form-container > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .appointment-form-container h2 {
+            font-size: 2.2rem;
+            color: #0077b6;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .appointment-form-container h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #0077b6, #00b4d8);
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid rgba(0, 119, 182, 0.1);
+            border-radius: 10px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0, 119, 182, 0.05);
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: #0077b6;
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-3px);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: #0077b6;
+            font-size: 1.05rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .appointment-types {
+            margin-bottom: 2.5rem;
+        }
+
+        .appointment-type {
+            background: linear-gradient(135deg, #ffffff, #f0f9ff);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 119, 182, 0.08);
+            padding: 1.8rem;
+            margin-bottom: 1.8rem;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment-type::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #0077b6, #00b4d8);
+            z-index: 1;
+            transition: width 0.3s ease;
+        }
+
+        .appointment-type::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwxMCBMIDIwLDEwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .appointment-type:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.15);
+        }
+
+        .appointment-type:hover::before {
+            width: 8px;
+        }
+
+        .appointment-type h3 {
+            font-size: 1.6rem;
+            color: #0077b6;
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+        }
+
+        .appointment-type p {
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+            color: #333;
+            position: relative;
+            z-index: 1;
+        }
+
+        .appointment-type-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #555;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 119, 182, 0.1);
+        }
+
+        .appointment-type-meta .duration {
+            display: flex;
+            align-items: center;
+        }
+
+        .appointment-type-meta .duration i {
+            margin-left: 0.8rem;
+            color: #0077b6;
+            font-size: 1.1rem;
+        }
+
+        .appointment-type-meta .price {
+            font-weight: bold;
+            color: #0077b6;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .appointments-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- وسائل التواصل الاجتماعي العائمة -->
+    <div class="floating-social">
+        <a href="https://wa.me/967781811558" target="_blank" class="whatsapp" title="واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1EpNPyGMDH/" target="_blank" class="facebook" title="فيسبوك">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/yn.a_7?utm_source=qr&igsh=eThrcjNnZjFwbGZy" target="_blank" class="instagram" title="انستغرام">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://t.me/alehidm" target="_blank" class="telegram" title="تلغرام">
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+    </div>
+
+
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="324232484_874075607240339_2051289815059088702_n.jpg" alt="شعار مركز الأمل للعلاج الطبيعي">
+                </div>
+                <div class="logo-text">
+                    <h1>مركز الأمل للعلاج الطبيعي وإعادة التأهيل</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html"><i class="fas fa-hospital"></i> عن المركز</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html"><i class="fas fa-stethoscope"></i> خدماتنا</a>
+                        <ul class="dropdown">
+                            <li><a href="services.html#bone"><i class="fas fa-bone"></i> علاج إصابات العظام</a></li>
+                            <li><a href="services.html#rehab"><i class="fas fa-walking"></i> إعادة التأهيل الحركي</a></li>
+                            <li><a href="services.html#stroke"><img src="stroke-therapy.svg" style="width: 16px; height: 16px; margin-left: 5px;"> علاج الجلطات</a></li>
+                            <li><a href="services.html#neuro"><i class="fas fa-brain"></i> العلاج العصبي</a></li>
+                            <li><a href="services.html#children"><i class="fas fa-child"></i> العلاج الطبيعي للأطفال</a></li>
+                            <li><a href="services.html#massage"><i class="fas fa-hands"></i> العلاج اليدوي</a></li>
+                            <li><a href="services.html#cupping"><i class="fas fa-pump-medical"></i> الحجامة</a></li>
+                            <li><a href="services.html#acupuncture"><i class="fas fa-syringe"></i> العلاج بالإبر الصينية</a></li>
+                            <li><a href="services.html#dry-needling"><i class="fas fa-thumbtack"></i> العلاج بالإبر الجافة</a></li>
+                            <li><a href="services.html#awareness"><i class="fas fa-users"></i> برامج التوعية</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> معرض الصور</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                    <li><a href="appointments.html" class="appointment-btn active"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
+                    <li><a href="sitemap.html"><i class="fas fa-sitemap"></i> خريطة الموقع</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="appointments-hero">
+        <div class="container">
+            <h1>حجز موعد</h1>
+            <p>احجز موعدك الآن للحصول على أفضل خدمات العلاج الطبيعي</p>
+        </div>
+    </section>
+
+    <!-- Appointments Section -->
+    <section class="appointments-section">
+        <div class="container">
+            <div class="appointments-grid">
+                <div class="appointment-info">
+                    <h2>كيفية حجز موعد</h2>
+                    <p>يمكنك حجز موعد في مركز الأمل للعلاج الطبيعي وإعادة التأهيل بسهولة من خلال ملء النموذج المرفق أو الاتصال بنا مباشرة. نحن نسعى لتوفير أوقات مناسبة لجميع المرضى وتقديم خدمة متميزة.</p>
+
+                    <div class="appointment-steps">
+                        <div class="appointment-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>اختر نوع الجلسة</h3>
+                                <p>حدد نوع الجلسة التي تحتاجها بناءً على حالتك الصحية واحتياجاتك.</p>
+                            </div>
+                        </div>
+                        <div class="appointment-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>املأ نموذج الحجز</h3>
+                                <p>قم بتعبئة نموذج الحجز بالمعلومات المطلوبة واختر التاريخ والوقت المناسب لك.</p>
+                            </div>
+                        </div>
+                        <div class="appointment-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>تأكيد الموعد</h3>
+                                <p>سنقوم بالتواصل معك لتأكيد موعدك خلال 24 ساعة من استلام طلب الحجز.</p>
+                            </div>
+                        </div>
+                        <div class="appointment-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>حضور الموعد</h3>
+                                <p>يرجى الحضور قبل 15 دقيقة من موعدك وإحضار أي تقارير طبية أو صور أشعة متعلقة بحالتك.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>أنواع الجلسات</h2>
+                    <div class="appointment-types">
+                        <div class="appointment-type">
+                            <h3>جلسة تقييم أولية</h3>
+                            <p>تقييم شامل للحالة وتحديد خطة العلاج المناسبة. تشمل الفحص السريري وتقييم القدرات الحركية والوظيفية.</p>
+                            <div class="appointment-type-meta">
+                                <span class="duration"><i class="far fa-clock"></i> 60 دقيقة</span>
+                                <span class="price">XXXX ريال</span>
+                            </div>
+                        </div>
+                        <div class="appointment-type">
+                            <h3>جلسة علاج طبيعي عادية</h3>
+                            <p>جلسة علاجية تشمل تطبيق خطة العلاج المحددة وتمارين إعادة التأهيل والعلاج اليدوي.</p>
+                            <div class="appointment-type-meta">
+                                <span class="duration"><i class="far fa-clock"></i> 45 دقيقة</span>
+                                <span class="price">XXXX ريال</span>
+                            </div>
+                        </div>
+                        <div class="appointment-type">
+                            <h3>جلسة علاج مكثفة</h3>
+                            <p>جلسة مكثفة للحالات التي تتطلب عناية خاصة، تشمل مجموعة متنوعة من تقنيات العلاج الطبيعي.</p>
+                            <div class="appointment-type-meta">
+                                <span class="duration"><i class="far fa-clock"></i> 90 دقيقة</span>
+                                <span class="price">XXXX ريال</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="appointment-form-container">
+                    <h2>نموذج حجز موعد</h2>
+                    <form id="appointment-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">الاسم الكامل</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointment-type">نوع الجلسة</label>
+                            <select id="appointment-type" name="appointment-type" required>
+                                <option value="">اختر نوع الجلسة</option>
+                                <option value="initial">جلسة تقييم أولية</option>
+                                <option value="regular">جلسة علاج طبيعي عادية</option>
+                                <option value="intensive">جلسة علاج مكثفة</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">التاريخ المفضل</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">الوقت المفضل</label>
+                                <select id="time" name="time" required>
+                                    <option value="">اختر الوقت</option>
+                                    <option value="morning">صباحاً (9:00 - 12:00)</option>
+                                    <option value="afternoon">ظهراً (12:00 - 3:00)</option>
+                                    <option value="evening">مساءً (3:00 - 8:00)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="medical-condition">وصف الحالة الطبية</label>
+                            <textarea id="medical-condition" name="medical-condition" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">ملاحظات إضافية</label>
+                            <textarea id="notes" name="notes"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <p style="margin-bottom: 10px; color: #0077b6;"><i class="fab fa-whatsapp" style="margin-left: 5px;"></i> سيتم إرسال طلب الحجز عبر الواتساب</p>
+                        </div>
+                        <button type="submit" class="btn primary-btn whatsapp-btn" style="width: 100%; background-color: #25D366; display: flex; justify-content: center; align-items: center;">
+                            <i class="fab fa-whatsapp" style="margin-left: 10px; font-size: 20px;"></i>
+                            إرسال عبر الواتساب
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>مركز الأمل للعلاج الطبيعي وإعادة التأهيل</h3>
+                    <p>نقدم خدمات علاج طبيعي متميزة بأحدث التقنيات وأفضل الممارسات العلاجية لمساعدتك على استعادة صحتك والتخلص من الألم.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المركز</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+
+                        <li><a href="gallery.html">معرض الصور</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                        <li><a href="sitemap.html">خريطة الموقع</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h3>ساعات العمل</h3>
+                    <ul>
+                        <li>السبت - الخميس: الفترة الصباحية ٨:٠٠ ص - ١:٠٠ م</li>
+                        <li>السبت - الخميس: الفترة المسائية ٢:٠٠ م - ٦:٠٠ م</li>
+                        <li>الجمعة: مغلق</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 مركز الأمل للعلاج الطبيعي وإعادة التأهيل. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="enhanced-chatbot.js"></script>
+
+    <script>
+        // Appointment form submission
+        document.getElementById('appointment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const appointmentType = document.getElementById('appointment-type').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const medicalCondition = document.getElementById('medical-condition').value;
+            const notes = document.getElementById('notes').value;
+
+            // Get appointment type text
+            let appointmentTypeText = "";
+            if (appointmentType === "initial") {
+                appointmentTypeText = "جلسة تقييم أولية";
+            } else if (appointmentType === "regular") {
+                appointmentTypeText = "جلسة علاج طبيعي عادية";
+            } else if (appointmentType === "intensive") {
+                appointmentTypeText = "جلسة علاج مكثفة";
+            }
+
+            // Get time text
+            let timeText = "";
+            if (time === "morning") {
+                timeText = "صباحاً (9:00 - 12:00)";
+            } else if (time === "afternoon") {
+                timeText = "ظهراً (12:00 - 3:00)";
+            } else if (time === "evening") {
+                timeText = "مساءً (3:00 - 8:00)";
+            }
+
+            // Simple validation
+            if (!name || !phone || !email || !appointmentType || !date || !time || !medicalCondition) {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+
+            // Create appointment message
+            const appointmentMessage = `
+طلب حجز موعد جديد من موقع مركز الأمل للعلاج الطبيعي:
+---------------------------
+الاسم: ${name}
+رقم الهاتف: ${phone}
+البريد الإلكتروني: ${email}
+نوع الجلسة: ${appointmentTypeText}
+التاريخ المفضل: ${date}
+الوقت المفضل: ${timeText}
+وصف الحالة الطبية: ${medicalCondition}
+ملاحظات إضافية: ${notes}
+---------------------------
+`;
+
+            // Send to WhatsApp
+            const whatsappUrl = `https://wa.me/967781811558?text=${encodeURIComponent(appointmentMessage)}`;
+            window.open(whatsappUrl, '_blank');
+
+            // Show success message
+            alert('تم إرسال طلب الحجز بنجاح عبر الواتساب. سنتواصل معك قريباً لتأكيد الموعد.');
+
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

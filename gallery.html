@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الصور - د. إبراهيم مقبل الضبيبي للعلاج الطبيعي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fix-styles.css">
+    <link rel="stylesheet" href="floating-social.css">
+    <link rel="stylesheet" href="enhanced-chatbot.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="fix-appointment-btn.css">
+    <link rel="stylesheet" href="logo-position.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page specific styles */
+        body {
+            position: relative;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(240, 249, 255, 0.8), rgba(255, 255, 255, 0.8));
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwzMCBMIDMwLDMwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.6;
+            z-index: -1;
+        }
+        .gallery-hero {
+            background: linear-gradient(rgba(0, 77, 122, 0.85), rgba(0, 180, 216, 0.85)), url('images/gallery-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxwYXRoIGQ9Ik0gMCwzMCBMIDMwLDMwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgZmlsbD0ibm9uZSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .gallery-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-hero p {
+            position: relative;
+            z-index: 1;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-section {
+            padding: 5rem 0;
+        }
+
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-filter::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #0077b6, transparent);
+            border-radius: 2px;
+        }
+
+        .gallery-filter button {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 249, 255, 0.9));
+            border: none;
+            padding: 12px 25px;
+            margin: 0 12px 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.1);
+            color: #0077b6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-filter button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            z-index: -1;
+        }
+
+        .gallery-filter button.active, .gallery-filter button:hover {
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 119, 182, 0.2);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 119, 182, 0.08);
+            height: 280px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+            background: linear-gradient(135deg, #ffffff, #f0f9ff);
+        }
+
+        .gallery-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #0077b6, #00b4d8);
+            z-index: 2;
+            transition: height 0.3s ease;
+        }
+
+        .gallery-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxwYXRoIGQ9Ik0gMCwxMCBMIDIwLDEwIiBzdHJva2U9IiMwMDc3YjYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDMiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 119, 182, 0.15);
+        }
+
+        .gallery-item:hover::before {
+            height: 8px;
+        }
+
+        .mirror-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mirror-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+            filter: brightness(0.95);
+        }
+
+        .gallery-item:hover .mirror-container img {
+            transform: scale(1.08);
+            filter: brightness(1.05);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 77, 122, 0.8), rgba(0, 119, 182, 0.4));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            color: white;
+            opacity: 0;
+            transition: all 0.4s ease;
+            padding: 25px;
+            z-index: 1;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.1s;
+        }
+
+        .gallery-item:hover .gallery-item-overlay h3 {
+            transform: translateY(0);
+        }
+
+        .gallery-item-overlay p {
+            font-size: 1rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.2s;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-item-overlay p {
+            transform: translateY(0);
+        }
+
+        .gallery-item-overlay i {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: all 0.4s ease;
+            background-color: rgba(0, 119, 182, 0.6);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item:hover .gallery-item-overlay i {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .lightbox.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 85vh;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 10px;
+            border: none;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .lightbox.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 15px;
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 10px;
+            background-color: rgba(0, 119, 182, 0.3);
+            border-radius: 30px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.2rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 119, 182, 0.3);
+            border-radius: 50%;
+        }
+
+        .lightbox-close:hover {
+            color: white;
+            background-color: #0077b6;
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 30px;
+        }
+
+        .lightbox-nav button {
+            background: linear-gradient(135deg, rgba(0, 119, 182, 0.5), rgba(0, 180, 216, 0.5));
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .lightbox-nav button:hover {
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- وسائل التواصل الاجتماعي العائمة -->
+    <div class="floating-social">
+        <a href="https://wa.me/967781811558" target="_blank" class="whatsapp" title="واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1EpNPyGMDH/" target="_blank" class="facebook" title="فيسبوك">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/yn.a_7?utm_source=qr&igsh=eThrcjNnZjFwbGZy" target="_blank" class="instagram" title="انستغرام">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://t.me/alehidm" target="_blank" class="telegram" title="تلغرام">
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="324232484_874075607240339_2051289815059088702_n.jpg" alt="شعار مركز الأمل للعلاج الطبيعي">
+                </div>
+                <div class="logo-text">
+                    <h1>مركز الأمل للعلاج الطبيعي وإعادة التأهيل</h1>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html"><i class="fas fa-hospital"></i> عن المركز</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html"><i class="fas fa-stethoscope"></i> خدماتنا</a>
+                        <ul class="dropdown">
+                            <li><a href="services.html#bone"><i class="fas fa-bone"></i> علاج إصابات العظام</a></li>
+                            <li><a href="services.html#rehab"><i class="fas fa-walking"></i> إعادة التأهيل الحركي</a></li>
+                            <li><a href="services.html#stroke"><img src="stroke-therapy.svg" style="width: 16px; height: 16px; margin-left: 5px;"> علاج الجلطات</a></li>
+                            <li><a href="services.html#neuro"><i class="fas fa-brain"></i> العلاج العصبي</a></li>
+                            <li><a href="services.html#children"><i class="fas fa-child"></i> العلاج الطبيعي للأطفال</a></li>
+                            <li><a href="services.html#massage"><i class="fas fa-hands"></i> العلاج اليدوي</a></li>
+                            <li><a href="services.html#cupping"><i class="fas fa-pump-medical"></i> الحجامة</a></li>
+                            <li><a href="services.html#acupuncture"><i class="fas fa-syringe"></i> العلاج بالإبر الصينية</a></li>
+                            <li><a href="services.html#dry-needling"><i class="fas fa-thumbtack"></i> العلاج بالإبر الجافة</a></li>
+                            <li><a href="services.html#awareness"><i class="fas fa-users"></i> برامج التوعية</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> معرض الصور</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                    <li><a href="appointments.html" class="appointment-btn"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
+                    <li><a href="sitemap.html"><i class="fas fa-sitemap"></i> خريطة الموقع</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gallery-hero">
+        <div class="container">
+            <h1>معرض الصور</h1>
+            <p>تعرف على عيادتنا وخدماتنا من خلال الصور</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="clinic">العيادة</button>
+                <button class="filter-btn" data-filter="therapy">جلسات العلاج</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- مركز الأمل للعلاج الطبيعي والتأهيل -->
+                <div class="gallery-item" data-category="clinic">
+                    <div class="mirror-container">
+                        <img src="324232484_874075607240339_2051289815059088702_n.jpg" alt="مركز الأمل للعلاج الطبيعي والتأهيل">
+                    </div>
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>مركز الأمل للعلاج الطبيعي والتأهيل</h3>
+                        <p>نقدم خدمات علاج طبيعي متميزة بأحدث التقنيات</p>
+                    </div>
+                </div>
+
+                <!-- العلاج الطبيعي 1 -->
+                <div class="gallery-item" data-category="therapy">
+                    <div class="mirror-container">
+                        <img src="1.jpg" alt="العلاج الطبيعي 1">
+                    </div>
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>العلاج الطبيعي للعمود الفقري</h3>
+                        <p>علاج آلام الظهر والرقبة وتصحيح وضعية العمود الفقري</p>
+                    </div>
+                </div>
+
+                <!-- العلاج الطبيعي 2 -->
+                <div class="gallery-item" data-category="therapy">
+                    <div class="mirror-container">
+                        <img src="2.jpg" alt="العلاج الطبيعي 2">
+                    </div>
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>العلاج الطبيعي للمفاصل</h3>
+                        <p>علاج التهابات وآلام المفاصل وتحسين حركتها</p>
+                    </div>
+                </div>
+
+                <!-- العلاج الطبيعي 3 -->
+                <div class="gallery-item" data-category="therapy">
+                    <div class="mirror-container">
+                        <img src="3.jpg" alt="العلاج الطبيعي 3">
+                    </div>
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>العلاج الطبيعي للإصابات الرياضية</h3>
+                        <p>علاج وإعادة تأهيل الإصابات الرياضية المختلفة</p>
+                    </div>
+                </div>
+
+                <!-- العلاج الطبيعي 4 -->
+                <div class="gallery-item" data-category="therapy">
+                    <div class="mirror-container">
+                        <img src="4.jpg" alt="العلاج الطبيعي 4">
+                    </div>
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>العلاج الطبيعي بعد العمليات الجراحية</h3>
+                        <p>إعادة التأهيل بعد العمليات الجراحية للعظام والمفاصل</p>
+                    </div>
+                </div>
+
+                <!-- العلاج الطبيعي 5 -->
+                <div class="gallery-item" data-category="therapy">
+                    <div class="mirror-container">
+                        <img src="5.jpg" alt="العلاج الطبيعي 5">
+                    </div>
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>العلاج الطبيعي للأطفال</h3>
+                        <p>علاج مشاكل النمو والحركة عند الأطفال</p>
+                    </div>
+                </div>
+
+                <!-- العلاج الطبيعي 6 -->
+                <div class="gallery-item" data-category="therapy">
+                    <div class="mirror-container">
+                        <img src="6.jpg" alt="العلاج الطبيعي 6">
+                    </div>
+                    <div class="gallery-item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>العلاج الطبيعي للمسنين</h3>
+                        <p>تحسين الحركة والتوازن وتخفيف الآلام لدى كبار السن</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="">
+            <div class="lightbox-caption">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+        <div class="lightbox-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="lightbox-nav">
+            <button class="prev-btn"><i class="fas fa-chevron-right"></i></button>
+            <button class="next-btn"><i class="fas fa-chevron-left"></i></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>مركز الأمل للعلاج الطبيعي وإعادة التأهيل</h3>
+                    <p>نقدم خدمات علاج طبيعي متميزة بأحدث التقنيات وأفضل الممارسات العلاجية لمساعدتك على استعادة صحتك والتخلص من الألم.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المركز</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+
+                        <li><a href="gallery.html">معرض الصور</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                        <li><a href="sitemap.html">خريطة الموقع</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h3>ساعات العمل</h3>
+                    <ul>
+                        <li>السبت - الخميس: الفترة الصباحية ٨:٠٠ ص - ١:٠٠ م</li>
+                        <li>السبت - الخميس: الفترة المسائية ٢:٠٠ م - ٦:٠٠ م</li>
+                        <li>الجمعة: مغلق</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 مركز الأمل للعلاج الطبيعي وإعادة التأهيل. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="enhanced-chatbot.js"></script>
+
+    <script>
+        // Force browser to reload CSS
+        function forceReload() {
+            const links = document.getElementsByTagName('link');
+            for (let i = 0; i < links.length; i++) {
+                if (links[i].rel === 'stylesheet') {
+                    const href = links[i].href.split('?')[0];
+                    links[i].href = href + '?' + new Date().getTime();
+                }
+            }
+        }
+
+        // Call force reload on page load
+        window.onload = function() {
+            forceReload();
+
+            // تحسين عرض الصور في معرض الصور
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                // إزالة الطبقة العلوية التي تخفي الصورة
+                const overlay = item.querySelector('.gallery-item-overlay');
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
+
+                // التأكد من أن الصور مرئية
+                const img = item.querySelector('img');
+                if (img) {
+                    img.style.opacity = '1';
+                    img.style.visibility = 'visible';
+                }
+
+                // إضافة تأثير التكبير عند التحويم
+                item.addEventListener('mouseenter', function() {
+                    if (img) {
+                        img.style.transform = 'scale(1.05)';
+                    }
+                });
+
+                item.addEventListener('mouseleave', function() {
+                    if (img) {
+                        img.style.transform = 'none';
+                    }
+                });
+            });
+        };
+
+        // تحسين تحميل الصور
+        document.addEventListener('DOMContentLoaded', function() {
+            // التأكد من تحميل جميع الصور
+            const allImages = document.querySelectorAll('img');
+            allImages.forEach(img => {
+                img.addEventListener('load', function() {
+                    // جعل الصور مرئية بعد التحميل
+                    if (img.closest('.gallery-item')) {
+                        img.style.opacity = '1';
+                        img.style.visibility = 'visible';
+                    }
+                });
+
+                // التعامل مع الصور التي لا تتحمل
+                img.addEventListener('error', function() {
+                    console.log('فشل تحميل الصورة: ' + img.src);
+                    // استبدال الصورة بصورة بديلة
+                    img.src = 'https://via.placeholder.com/400x300?text=صورة+غير+متوفرة';
+                });
+            });
+        });
+
+        // Gallery Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Lightbox functionality
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+            const prevBtn = lightbox.querySelector('.prev-btn');
+            const nextBtn = lightbox.querySelector('.next-btn');
+            let currentIndex = 0;
+
+            // Open lightbox
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    currentIndex = index;
+                    const img = this.querySelector('.mirror-container img');
+                    const title = this.querySelector('h3').textContent;
+                    const desc = this.querySelector('p').textContent;
+
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightboxCaption.querySelector('h3').textContent = title;
+                    lightboxCaption.querySelector('p').textContent = desc;
+
+                    lightbox.classList.add('active');
+                });
+            });
+
+            // Close lightbox
+            lightboxClose.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+            });
+
+            // Close lightbox when clicking outside the content
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+
+            // Navigate to previous image
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                updateLightbox();
+            });
+
+            // Navigate to next image
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % galleryItems.length;
+                updateLightbox();
+            });
+
+            // Update lightbox content
+            function updateLightbox() {
+                const item = galleryItems[currentIndex];
+                const img = item.querySelector('.mirror-container img');
+                const title = item.querySelector('h3').textContent;
+                const desc = item.querySelector('p').textContent;
+
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxCaption.querySelector('h3').textContent = title;
+                lightboxCaption.querySelector('p').textContent = desc;
+            }
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('active')) return;
+
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                } else if (e.key === 'ArrowLeft') {
+                    nextBtn.click(); // Reversed for RTL
+                } else if (e.key === 'ArrowRight') {
+                    prevBtn.click(); // Reversed for RTL
+                }
+            });
+        });
+    </script>
+</body>
+</html>

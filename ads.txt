@@ -1,0 +1,4 @@
+# Google AdSense
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# يرجى استبدال XXXXXXXXXXXXXXXX برقم الناشر الخاص بك من Google AdSense
